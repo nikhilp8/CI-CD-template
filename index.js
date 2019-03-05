@@ -19,7 +19,7 @@ app.get('/api', (req, res) => {
     //     title:'test',
     //     content:'testing stuff jsut like that'
     // }).save()
-    
+
     BlogPost.find(function (err, blog) {
         if (err) return console.error(err);
         res.send(blog)
@@ -35,7 +35,7 @@ if (process.env.NODE_ENV === 'production') {
     // if it doesn't recongnize the route
     const path = require('path');
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve('client', 'build', 'index.html'))
+        res.sendFile(path.resolve(__dirname,'client', 'build', 'index.html'))
     })
 }
 
