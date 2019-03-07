@@ -14,11 +14,11 @@ app.use(bodyParser.json());
 
 const BlogPost = mongoose.model('blogPosts');
 // Express routes here
-app.get('/api', (req, res) => {
-    // new BlogPost({
-    //     title:'test',
-    //     content:'testing stuff jsut like that'
-    // }).save()
+app.get('/api/test', (req, res) => {
+    new BlogPost({
+        title:'test',
+        content:'testing stuff jsut like that'
+    }).save()
 
     BlogPost.find(function (err, blog) {
         if (err) return console.error(err);
